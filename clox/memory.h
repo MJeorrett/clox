@@ -11,13 +11,6 @@
 #define FREE_ARRAY(type, pointer, oldCount) \
 	reallocate(pointer, sizeof(type) * (oldCount), 0)
 
-void* reallocate(void* previous, size_t oldSize, size_t newSize) {
-	if (newSize == 0) {
-		free(previous);
-		return NULL;
-	}
-
-	return realloc(previous, newSize);
-}
+void* reallocate(void* previous, size_t oldSize, size_t newSize);
 
 #endif // !clox_memory_h
