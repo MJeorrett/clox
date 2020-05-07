@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "common.h"
 #include "chunk.h"
 #include "debug.h"
@@ -15,7 +17,21 @@ int main(int argc, const char* argv[]) {
 
 	writeChunk(&chunk, OP_RETURN, 123);
 
+	printf("=================");
+	printf("\n");
+	printf("== disassembly ==");
+	printf("\n");
+	printf("=================");
+	printf("\n");
 	disassembleChunk(&chunk, "test chunk");
+
+	printf("\n\n");
+	printf("==============");
+	printf("\n");
+	printf("== exection ==");
+	printf("\n");
+	printf("==============");
+	printf("\n");
 	interpret(&chunk);
 
 	freeVM();
