@@ -29,7 +29,7 @@ static bool isDigit(char c) {
 }
 
 static bool isAtEnd() {
-    return scanner.current == '\0';
+    return *scanner.current == '\0';
 }
 
 static char advance() {
@@ -181,7 +181,7 @@ Token scanToken() {
 
     scanner.start = scanner.current;
 
-    if (isAtEnd()) makeToken(TOKEN_EOF);
+    if (isAtEnd()) return makeToken(TOKEN_EOF);
 
     char c = advance();
 
@@ -211,5 +211,5 @@ Token scanToken() {
     case '"': return string();
     }
 
-    return errorToken("Unexpected characer.");
+    return errorToken("Unexpected character.");
 }
