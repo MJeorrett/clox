@@ -9,6 +9,8 @@
 #include "memory.h"
 #include "object.h"
 
+VM vm;
+
 static void resetStack() {
 	vm.stackTop = vm.stack;
 }
