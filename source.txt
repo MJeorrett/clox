@@ -1,16 +1,16 @@
-var a = "global";
-print a;
-
 {
-	var a = "local";
-		print a;
+	var a = 3;
 
 	{
-		var a = "nested";
+		var a = 2;
+		{
+			var a = a;
+		}
+
+		print "inner a";
 		print a;
 	}
-	
+
+	print "outer a";
 	print a;
 }
-
-print a;
