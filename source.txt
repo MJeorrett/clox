@@ -1,0 +1,16 @@
+var a = "global";
+print a;
+
+{
+	var a = "local";
+		print a;
+
+	{
+		var a = "nested";
+		print a;
+	}
+	
+	print a;
+}
+
+print a;
