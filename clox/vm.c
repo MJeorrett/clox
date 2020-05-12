@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "vm.h"
 #include "common.h"
 #include "compiler.h"
 #include "debug.h"
 #include "memory.h"
 #include "object.h"
+#include "vm.h"
 
 VM vm;
 
@@ -145,9 +145,12 @@ static InterpretResult run() {
 			push(NUMBER_VAL(-AS_NUMBER(pop())));
 			break;
 		}
-		case OP_RETURN: {
+		case OP_PRINT: {
 			printValue(pop());
 			printf("\n");
+			break;
+		}
+		case OP_RETURN: {
 			return INTERPRET_OK;
 		}
 		}
